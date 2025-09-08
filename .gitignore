@@ -9,3 +9,4 @@ logs
 helper/dbname.json
 *.zip
 dataenvbackup 
+envbackup 

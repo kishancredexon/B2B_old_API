@@ -1,0 +1,55 @@
+const mongoose = require("mongoose");
+
+const usersSchema = mongoose.Schema({
+  id: Number,
+  phone: String,
+  email: String,
+  password: String,
+  usertype: Number,  //0=admin 1=subadmin 2 =user
+  country_code: String,
+  refercode: String,
+  referred_by: String,
+  referred_status: String,
+  referalShareCount: Number,
+  otp: String,
+  status: Number,
+  ip: String,
+  browser: String,
+  devicetoken: String,
+  devicetype: String,
+  logintype: String,
+  socialid: String,
+  walletbalance: Number,
+  wltwin: Number,
+  totalwin: Number,
+  wltbns: Number,
+  wltdept: Number,
+  welbns: Number,
+  logindate: Number,
+  isbankdverify: Number,
+  ispanverify: Number,
+  isphoneverify: Number,
+  isemailverify: Number,
+  istnameedit: Number,
+  modified: Number,
+  isCompleteProfile: Number,
+  isVerifed: Number,
+  socialtype: Number,
+  referalShareCount: Number,
+  welbns: Number,
+  subadminmodule_status: String,
+  wltwithdraw: Number,
+  totaljoinfee: Number,
+  totaljoinfeedepots: Number,
+  isIds: Number,
+  totaltds: Number,
+  wltbaltds: Number,
+  emailOtp: String,
+  createdAt: Date,
+  updatedAt: Date
+},
+  {
+    versionKey: false
+  })
+
+module.exports = mongoose.model("users", usersSchema)

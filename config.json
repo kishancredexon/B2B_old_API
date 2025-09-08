@@ -1,0 +1,22 @@
+{
+  "secret": "CredexonAPI",
+  "secretA": "credexon57586xYfantasy",
+  "role": {
+    "admin": 0,
+    "user": 2,
+    "subadmin": 1
+  },
+  "status": {
+    "active": 1,
+    "inactive": 2
+  },
+  "profile_url_profile_doc": "https://devapi.credexon.com/",
+  "profile_url": "https://devapi.credexon.com/images/",
+  "profile_url_aws": "https://credexon-prod.s3.ap-south-1.amazonaws.com/",
+  "android": {
+    "product_id": "credexon-a11d3",
+    "project_no": "529177721590",
+    "web_api_key": "AIzaSyBwZvVFyeOKbzJub2_cvO1R2HFBjOT-E9o",
+    "public_facing_name": "project-529177721590"
+  }
+}

@@ -1,0 +1,144 @@
+  <!DOCTYPE html>
+<html>
+
+<head>
+  <title>SocketIO Upvote</title>
+  <style>
+    .container {
+      width: 80%;
+      margin: 1rem auto;
+    }
+
+    .text-justify {
+      text-align: justify;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed turpis sit amet
+      tellus convallis tincidunt quis ut massa. Phasellus maximus orci quis mauris tincidunt, ut tempor turpis
+      tincidunt. Curabitur vestibulum nunc consequat venenatis ultrices. Aliquam eget congue risus, in imperdiet urna.
+      Vestibulum varius velit risus, non luctus arcu placerat vel. In hac habitasse platea dictumst. Pellentesque vitae
+      justo volutpat, euismod ligula quis, posuere nibh.
+    </p>
+
+  </div>
+
+  <div class="container">
+    <center>
+      <button id="upvote-btn"> Upvote </button>
+      <p id="upvote-count">0 Upvotes</p>
+    </center>
+  </div>
+
+  <div>
+    <section class="dashboard-section">
+      <div class="page-header">
+        <h1 class="page-title">Messages</h1>
+        <p id="chatDiv"> </p>
+      </div>
+      <div class="chat-container">
+        <aside>
+          <div class="conversations" id="lastChatList">
+
+          </div>
+        </aside>
+        <main>
+          <div class="top-bar">
+            <div class="user-info" id="userInfo">
+
+            </div>
+          </div>
+          <div class="messages" id="chatShow">
+            <h2 class="text-center mt-5"> Select any user to start chat </h2>
+          </div>
+          <div class="bottom-bar" id="chatShow2">
+            <textarea class="msg-input" id="msgInput" placeholder="Type Something..."></textarea>
+            <div class="chat-user-options">
+              <button class="send-btn" id="sendBtn">
+                <i class="fas fa-paper-plane">Send</i>
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+  </div>
+
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
+  <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"
+    integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script>
+    var socket = io();
+    var btn = document.getElementById('upvote-btn');
+    var upvote_val = false;
+    const senderId = parseInt("{{$vendor_id}}");
+    const senderApp = "v";
+    var currentUserId = parseInt("{{$chat_with_id}}");
+    var currentUserType = "{{$chat_app}}";
+
+    var arr;
+    var user_id;
+    var user_type;
+
+    var page = 1;
+    var lastSend = 0;
+    var objLiveSerice =//{gamekey:"plyacc" ,match_id:18676562,"type": "football",userid:179, "status": 2};;
+      //{ gamekey: "tmacc", league_id: 19699, type: "football", status: 3, userid: "213" }
+    //{ gamekey: "plyacc", match_id: 18546352, "type": "football", userid: 12, "status": 3 };
+    {"match_id": 18535341, "pool_id": "6409f1f3999cce6dc689a77b", "status": 1, "type": "football", "userid":  21};
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();   // prevent page reloading
+      upvote_val = upvote_val ? false : true;
+      socket.emit('upvote-event', upvote_val);
+    });
+
+    socket.on('live_pool_data_v2_64456_651b6c6984eb9f333acae530_cricket', function (f_str) {
+      document.getElementById('upvote-count').innerHTML = f_str;
+    });
+
+    //conneted mon
+    //let reqTitle = "live_pool_data";
+    let reqTitle = "series_team_stats_data";
+    //let reqValue = 'live_plyacc_data_' + objLiveSerice.match_id + '_' + objLiveSerice.type + '_' + objLiveSerice.status + '_' + objLiveSerice.userid + '';
+    //let reqValue = 'live_pool_data_' + objLiveSerice.league_id + '_' + objLiveSerice.type + '_' + objLiveSerice.status + '_' + objLiveSerice.userid + '';
+    let reqValue = reqTitle + '_' + objLiveSerice.match_id + '_' + objLiveSerice.pool_id + '_' + objLiveSerice.type + '_' + objLiveSerice.status + '_' + objLiveSerice.userid + '';
+//'series_team_stats_data_127616_ckt_1_21'
+    socket.on('live_pool_data_v2_64456_651b6c6984eb9f333acae530_cricket', function (ttr) {
+      // let v = JSON.stringify(ttr)
+      //document.getElementById('upvote-count').innerHTML = JSON.parse(v);
+    })
+
+    $(document).ready(function () {
+      $('#sendBtn').click(function () {
+        sendMessage();
+      })
+    })
+
+    function sendMessage() {
+      var message = $("#msgInput").val();
+      arr = {
+        sender: senderId,
+        sender_app: senderApp,
+        receiver: currentUserId,
+        receiver_app: currentUserType,
+        message: message,
+        fileType: 0,
+        file: "",
+      };
+
+      socket.emit(reqTitle, objLiveSerice);
+      //socket.emit('sendChatToServer',arr);
+    }
+  </script>
+</body>
+
+</html>

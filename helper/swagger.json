@@ -1,0 +1,58 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Command API",
+      "description": "API for sending commands.",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8881",
+        "description": "Local server"
+      }
+    ],
+    "paths": {
+      "/app/users/login_check": {
+        "post": {
+          "summary": "Send a command",
+          "description": "Endpoint to send a command.",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "country_code": {
+                      "type": "string",
+                      "description": "Ex - +91"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "Ex - 9571541203"
+                      },
+                      "apikey": {
+                        "type": "string",
+                        "description": "Ex - XXXXXES#DDD"
+                      }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success response"
+            },
+            "400": {
+              "description": "Invalid request"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      }
+    }
+  }
+  

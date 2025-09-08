@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+<title> OTP Verification </title>
+
+<style type="text/css">
+body{
+  font-family: 'Libre Franklin', sans-serif;
+}
+</style>
+
+</head>
+<body style="background-color: #F7F7F7; margin: 0; width: 100%; font-family: 'Libre Franklin', sans-serif; padding: 50px 0;">
+  <center  style="width: 600px; margin: auto;">
+    <table style="width: 100%;" class="mail-header">
+        <tbody>
+            <tr>
+                <td align="center">
+                    <img src="https://credexon.com/images/logo.svg" alt="Logo" style="margin: auto; height: auto; display: block;">
+                </td>
+            </tr>
+            <tr>
+                <td height="40"></td>
+            </tr>
+            <tr>
+                <td   style="color: #58585A; font-size: 24px; font-weight: normal;">
+                    Hi <span style="color: #000; font-weight: bold;"> {{name}},</span>
+                </td>
+            </tr>
+            <tr>
+                <td height="10"></td>
+            </tr>
+			
+			<tr>
+                <td height="40"></td>
+            </tr>
+            <tr>
+                <td   style="color: #58585A; font-size: 24px; font-weight: normal;">
+                    <span style="color: #000; font-weight: bold;"> Hope you are doing well and good,</span>
+                </td>
+            </tr>
+			<tr>
+                <td height="10"></td>
+            </tr>
+			<tr>
+                <td   style="color: #58585A; font-size: 24px; font-weight: normal;">
+                    <span style="color: #000; font-weight: bold;">There is a contact us form query has been submitted </span>
+                </td>
+            </tr>
+            <tr>
+                <td height="10"></td>
+            </tr>
+			<tr>
+                <td   style="color: #58585A; font-size: 24px; font-weight: normal;">
+                    <span style="color: #000; font-weight: bold;">Contact Details:</span>
+                </td>
+            </tr>
+            <tr>
+                <td height="10"></td>
+            </tr>
+			
+			
+            <tr>
+                <td   style="color: #58585A; font-size: 24px; font-weight: normal;">   <br /> Name : {{name}}</td>
+            </tr> 
+			<tr>
+                <td   style="color: #58585A; font-size: 24px; font-weight: normal;">   <br /> Email : {{email}}</td>
+            </tr>
+			
+			<tr>
+                <td    style="color: #58585A; font-size: 24px; font-weight: normal;">   <br /> Phone : {{pnone}}</td>
+            </tr>
+			
+           	<tr>
+                <td   style="color: #58585A; font-size: 24px; font-weight: normal;">   <br /> Subject : {{subject}}</td>
+            </tr>
+			
+				<tr>
+                <td   style="color: #58585A; font-size: 24px; font-weight: normal;">   <br /> Message : {{message}}</td>
+            </tr>
+			
+			
+			<tr>
+                <td height="30"></td>
+            </tr>
+			<tr>
+                <td   style="color: #58585A; font-size: 24px; font-weight: normal;">
+                    <span style="color: #000; font-weight: bold;">This is a System Generated Email, Please Do not Reply.</span>
+                </td>
+            </tr>
+            <tr>
+                <td height="10"></td>
+            </tr>
+			<tr>
+                <td height="10"></td>
+            </tr>
+			<tr>
+                <td  style="color: #58585A; font-size: 24px; font-weight: normal;">
+                    <span style="color: #000; font-weight: bold;">
+					Best Wishes 
+					</br>
+					</br>
+					Team Credexon</span>
+                </td>
+            </tr>
+            <tr>
+                <td height="10"></td>
+            </tr>
+			
+        </tbody>
+    </table>
+ 
+
+    <table cellpadding="0" cellspacing="0" width="100%" class="mail-footer" align="center">
+        <tbody>
+            
+			
+            <tr align="center">
+                <td style="color:#58585A; font-weight: bold; font-size: 12px;">  © 2023 Credexon All Rights Reserved </td>
+            </tr>
+            <tr>
+                <td height="10"></td>
+            </tr>
+        </tbody>
+    </table>
+  </center>
+</body>
+</html>

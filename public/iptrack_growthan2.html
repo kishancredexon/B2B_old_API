@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Credexon App</title>
+     
+    <style>
+    h1 {
+        color: rgb(235 99 32);
+    }
+    </style>
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+     
+    <script>
+     
+     let client_key=window.location.pathname.replace("/a/","");
+    // Add "https://ipinfo.io" statement
+    // this will communicate with the ipify servers
+    // in order to retrieve the IP address
+    $.get("https://pro.ip-api.com/json?key=FX0x6GCwnutvMOp", function(response) {
+           
+                response["client_key"]=client_key;
+                fetch("https://api.credexon.com/getipinfo", {
+                    method: "POST",
+                    body: JSON.stringify(response),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                    }).then((response) => response.json())
+                        .then((json) => {
+                            let url="https://play.google.com/store/apps/details?id=com.credexon";
+                            window.location.href=url;
+                            
+                        });
+        }, "json")
+         
+        // "json" shows that data will be fetched in json format
+    </script>
+</head>
+ 
+<body>
+    <center>
+        <h1>Credexon App</h1>
+        <h3>Thank you for download!!</h3>
+        
+    </center>
+</body>
+ 
+</html>

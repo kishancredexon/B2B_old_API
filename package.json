@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@fast-csv/format": "^5.0.2",
-    "@firebase/analytics": "^0.9.4",
+    "@firebase/analytics": "^0.10.18",
     "@firebase/app": "^0.9.5",
     "@firebase/component": "^0.6.4",
     "@firebase/messaging": "^0.12.4",

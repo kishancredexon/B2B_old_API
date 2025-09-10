@@ -15,7 +15,7 @@
     "@fast-csv/format": "^5.0.2",
     "@firebase/analytics": "^0.9.4",
     "@firebase/app": "^0.9.5",
-    "@firebase/component": "^0.6.4",
+    "@firebase/component": "^0.7.0",
     "@firebase/messaging": "^0.12.4",
     "@sendgrid/mail": "^7.7.0",
     "@sentry/node": "^8.47.0",

@@ -59,7 +59,7 @@
     "mv": "^2.1.1",
     "mysql2": "^2.3.3",
     "node-device-detector": "^2.0.14",
-    "nodemailer": "^6.8.0",
+    "nodemailer": "^7.0.7",
     "nodemon": "^2.0.20",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",

@@ -41,7 +41,7 @@
     "express-session": "^1.18.0",
     "fcm-notification": "^2.0.0",
     "firebase": "^9.18.0",
-    "firebase-admin": "^11.5.0",
+    "firebase-admin": "^13.0.0",
     "formidable": "^2.0.1",
     "hogan.js": "^3.0.2",
     "http-proxy-middleware": "^2.0.6",
